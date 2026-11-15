@@ -1,0 +1,10 @@
+.q-motion-marker{position:fixed;pointer-events:none;z-index:30;background:#2869e8;border-radius:3px}
+.qingchang-shell .nav-link.q-marker-moving{box-shadow:none}
+.workflow-phases .q-marker-moving::after{visibility:hidden}
+.workflow-phases button{transition:color 150ms ease,background-color 150ms ease,transform 100ms ease}
+.workflow-phases button:active:not(:disabled){transform:scale(.97)}
+button.q-action-pending{cursor:progress}
+button.q-action-pending::after{content:'';display:inline-block;width:12px;height:12px;margin-left:8px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;vertical-align:-2px;animation:q-action-spin 700ms linear infinite}
+.qingchang-shell .btn:focus-visible,.workflow-phases button:focus-visible{outline:3px solid #2869e845;outline-offset:3px}
+@keyframes q-action-spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.q-motion-marker{display:none}.workflow-phases button{transition:none}.workflow-phases button:active:not(:disabled){transform:none}button.q-action-pending::after{animation:none}}

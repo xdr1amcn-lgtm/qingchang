@@ -1,0 +1,5 @@
+Speaker embedding model: 3D-Speaker CAM++ (Chinese, 16 kHz)
+Project: https://github.com/modelscope/3D-Speaker
+ONNX export distribution: https://github.com/k2-fsa/sherpa-onnx/releases/download/speaker-recongition-models/3dspeaker_speech_campplus_sv_zh-cn_16k-common.onnx
+Runtime: sherpa-onnx-node (local CPU inference)
+This model supplies speaker embeddings, not guaranteed overlapping-speaker separation.

@@ -1,0 +1,92 @@
+appId: com.qingchang.desktop
+productName: 轻场
+copyright: Copyright © 2026 凡梦大王
+asar: true
+electronVersion: 38.8.6
+compression: maximum
+npmRebuild: false
+directories:
+  output: release
+  buildResources: build
+files:
+  - "**/*"
+  - "!plans/**"
+  - "!tools/**"
+  - "!release/**"
+  - "!release-inno/**"
+  - "!release-inno-test/**"
+  - "!build/**"
+  - "!test-support/**"
+  - "!adminator-v4-source/**"
+  - "!**/*.test.js"
+  - "!README.md"
+  - "!DESIGN-SYSTEM.md"
+  - "!FRAME-REPAIR.md"
+  - "!STREAM-FILTER.md"
+  - "!WORKFLOW-093.md"
+  - "!start-trial.cmd"
+  - "!electron-builder.yml"
+  - "!electron-builder.release.yml"
+  - "!assets/qingchang-logo-source.jpg"
+  - "!assets/icon-source.png"
+  - "!assets/icon-16.png"
+  - "!assets/icon-20.png"
+  - "!assets/icon-24.png"
+  - "!assets/icon-32.png"
+  - "!assets/icon-40.png"
+  - "!assets/icon-48.png"
+  - "!assets/icon-64.png"
+  - "!assets/icon-128.png"
+  - "!assets/icon-256.png"
+  - "!assets/live-speaker-campplus.onnx"
+  - "!assets/live-vad-model.onnx"
+  - "!node_modules/.cache/**"
+asarUnpack:
+  - live-speaker-worker.js
+  - live-speaker-policy.js
+  - node_modules/sherpa-onnx-node/**
+  - node_modules/sherpa-onnx-win-x64/**
+extraResources:
+  - from: vendor/presentmon
+    to: presentmon
+  - from: vendor/hardware-monitor
+    to: hardware-monitor
+  - from: vendor/nvidia-profile-inspector
+    to: nvidia-profile-inspector
+  - from: frame-repair-native.ps1
+    to: frame-repair-native.ps1
+  - from: optimization-native.ps1
+    to: optimization-native.ps1
+  - from: ocr-balance.ps1
+    to: ocr-balance.ps1
+  - from: assets/live-speaker-campplus.onnx
+    to: live-speaker-campplus.onnx
+  - from: assets/live-vad-model.onnx
+    to: live-vad-model.onnx
+win:
+  icon: assets/qingchang.ico
+  target:
+    - target: nsis
+      arch:
+        - x64
+  artifactName: "轻场-${version}-安装包.${ext}"
+nsis:
+  oneClick: false
+  perMachine: false
+  allowElevation: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: 轻场
+  uninstallDisplayName: 轻场
+  installerIcon: assets/qingchang.ico
+  uninstallerIcon: assets/qingchang.ico
+  installerHeaderIcon: assets/qingchang.ico
+  installerHeader: build/installerHeader.bmp
+  installerSidebar: build/installerSidebar.bmp
+  uninstallerSidebar: build/installerSidebar.bmp
+  installerLanguages:
+    - zh_CN
+  deleteAppDataOnUninstall: false
+  runAfterFinish: true
+  removeDefaultUninstallWelcomePage: false

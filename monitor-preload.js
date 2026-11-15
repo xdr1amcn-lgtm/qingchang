@@ -1,0 +1,1 @@
+const{contextBridge,ipcRenderer}=require('electron');contextBridge.exposeInMainWorld('qingchangMonitor',{status:()=>ipcRenderer.invoke('qingchang:monitor-status'),onUpdate:callback=>{ipcRenderer.on('monitor:update',(_event,value)=>callback(value));}});

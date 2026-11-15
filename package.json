@@ -1,0 +1,24 @@
+{
+  "name": "qingchang",
+  "version": "0.14.0",
+  "description": "轻场 · 三角洲主播与陪玩本地工作台",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test",
+    "dist": "npm run pack:dir && npm run installer:inno",
+    "pack:dir": "electron-builder --config electron-builder.release.yml --win --x64 --dir",
+    "installer:inno": "node tools/build-installer.cjs"
+  },
+  "dependencies": {
+    "sherpa-onnx-node": "1.13.8",
+    "sherpa-onnx-win-x64": "1.13.8"
+  },
+  "devDependencies": {
+    "electron": "38.8.6",
+    "electron-builder": "26.15.3"
+  },
+  "author": "凡梦大王",
+  "license": "GPL-3.0-only"
+}

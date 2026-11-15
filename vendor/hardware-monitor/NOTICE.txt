@@ -1,0 +1,11 @@
+CPU/GPU sensor library: LibreHardwareMonitor 0.9.6 (MPL-2.0).
+Unmodified library binaries and .NET dependencies from the official release:
+https://github.com/LibreHardwareMonitor/LibreHardwareMonitor/releases/tag/v0.9.6
+Library source: https://github.com/LibreHardwareMonitor/LibreHardwareMonitor/tree/v0.9.6
+Read-only CPU/GPU bridge source is included in app.asar: qingchang/hardware-sensor.cs.
+Rebuild with scripts/build-qingchang-sensors.ps1 in the project source.
+The bridge opens CPU/GPU sensors only. It does not write fan controls or clocks.
+PawnIO official unmodified installer 2.2.0, signed by namazso.eu:
+https://github.com/namazso/PawnIO.Setup/releases/tag/2.2.0
+The installer is launched only when the user clicks Install CPU sensor driver.
+The application does not silently install drivers or disable Windows security settings.

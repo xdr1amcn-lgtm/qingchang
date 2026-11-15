@@ -1,0 +1,77 @@
+@font-face {
+  font-family: "Qingchang Smiley Sans";
+  src: url("./media/SmileySans.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Qingchang Noto Sans SC";
+  src: url("./media/NotoSansSC.ttf") format("truetype");
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Qingchang Noto Serif SC";
+  src: url("./media/NotoSerifSC.ttf") format("truetype");
+  font-weight: 200 900;
+  font-display: swap;
+}
+@font-face { font-family: "Qingchang Ma Shan Zheng"; src: url("./media/MaShanZheng.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "Qingchang Long Cang"; src: url("./media/LongCang.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "Qingchang Zhi Mang Xing"; src: url("./media/ZhiMangXing.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "Qingchang Liu Jian Mao Cao"; src: url("./media/LiuJianMaoCao.ttf") format("truetype"); font-display: swap; }
+.qingchang-shell .title-editor-layout { grid-template-columns: 410px minmax(0, 1fr); align-items: start; gap: 18px; }
+.title-editor-panel .card-head { margin-bottom: 17px; }
+.title-accordion { border-top: 1px solid var(--border); }
+.title-accordion:last-of-type { border-bottom: 1px solid var(--border); }
+.title-accordion summary { list-style: none; display: flex; align-items: center; gap: 10px; min-height: 55px; cursor: pointer; color: var(--t-base); font-size: 13px; font-weight: 700; }
+.title-accordion summary::-webkit-details-marker { display: none; }
+.title-accordion summary small { margin-left: auto; color: var(--t-light); font-size: 11px; font-weight: 500; }
+.title-accordion summary::after { content: '⌄'; margin-left: 2px; color: var(--t-muted); font-size: 17px; line-height: 1; transform: rotate(-90deg); transition: transform .16s ease; }
+.title-accordion[open] summary::after { transform: rotate(0); }
+.title-accordion-body { display: grid; gap: 14px; padding: 2px 0 20px; }
+.title-accordion-body .field textarea { min-height: 74px; }
+.title-accordion-body .title-controls-grid { margin-top: 0; }
+.title-accordion-body .title-inline-options { margin-top: 0; }
+.title-accordion-body .title-color-actions { margin: -2px 0 2px; }
+.title-accordion-body .title-switch { margin: 3px 0 0; }
+.title-section { border-top: 1px solid var(--border); margin-top: 20px; padding-top: 17px; }
+.title-section h3 { margin: 0 0 14px; font-size: 13px; color: var(--t-base); }
+.title-control { display: flex; flex-direction: column; gap: 7px; min-width: 0; font-size: 12px; color: var(--t-muted); }
+.title-control > span { font-weight: 600; }
+.title-control select,
+.title-control input[type="number"] { width: 100%; height: 36px; padding: 0 9px; border: 1px solid var(--border); border-radius: 7px; background: #fff; color: var(--t-base); }
+.title-control input[type="color"] { width: 100%; height: 36px; padding: 3px; border: 1px solid var(--border); border-radius: 7px; background: #fff; cursor: pointer; }
+.title-controls-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px 12px; }
+.title-control + .title-controls-grid { margin-top: 13px; }
+.title-controls-grid + .title-control { margin-top: 13px; }
+.title-number { display: flex; align-items: center; gap: 5px; }
+.title-number small { color: var(--t-light); min-width: 17px; }
+.title-inline-options { display: flex; flex-wrap: wrap; align-items: center; gap: 9px 12px; margin-top: 13px; }
+.title-inline-options label,
+.title-switch { display: inline-flex; align-items: center; gap: 6px; color: var(--t-muted); font-size: 12px; }
+.title-switch { margin-bottom: 13px; }
+.title-local-color { display: flex; gap: 6px; align-items: center; }
+.title-local-color input { flex: 0 0 44px; }
+.title-local-color .btn { flex: 1; min-width: 0; padding: 0 5px; font-size: 10px; }
+.title-license-note { margin: 18px 0 0; color: var(--t-light); font-size: 11px; line-height: 1.65; }
+.title-preview-panel { position: sticky; top: 20px; }
+.title-preview-label { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 0 0 10px; font-size: 11px; color: var(--t-light); }
+.title-preview-label strong { color: var(--t-muted); font-weight: 700; }
+.title-preview-panel .title-preview { min-height: 0; aspect-ratio: 14 / 5; background: #fff; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; display: grid; place-items: center; }
+.title-preview-panel canvas { display: block; width: 100%; height: auto; }
+.title-detail-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 22px 0 12px; }
+.title-detail-head h3 { margin: 0 0 4px; color: var(--t-base); font-size: 13px; }
+.title-detail-head p { margin: 0; color: var(--t-light); font-size: 11px; line-height: 1.5; }
+.title-detail-head > span { color: var(--primary); background: var(--primary-soft); border-radius: 6px; padding: 5px 8px; font-size: 11px; font-weight: 700; white-space: nowrap; }
+.title-detail-preview { aspect-ratio: 35 / 9; border: 1px solid var(--border); border-radius: 8px; background: #fff; overflow: hidden; }
+.title-detail-preview canvas { width: 100%; height: 100%; cursor: text; touch-action: none; }
+.title-selection-toolbar { margin-top: 14px; padding: 14px; border: 1px solid #d6e3fb; border-radius: 10px; background: #f7faff; }
+.title-selection-toolbar[hidden] { display: none; }
+.title-selection-heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 12px; color: var(--t-base); font-size: 12px; }
+.title-selection-heading .btn { padding: 0 4px; }
+.title-selection-controls { display: grid; grid-template-columns: minmax(0, 1fr) 120px; gap: 12px; }
+.title-selection-effects { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 13px; }
+.title-selection-effects .btn.is-active { border-color: var(--primary); background: var(--primary-soft); color: var(--primary); }
+.title-preview-foot { display: flex; justify-content: space-between; gap: 14px; color: var(--t-light); font-size: 11px; margin-top: 11px; }
+.title-preview-foot b { color: var(--t-muted); font-weight: 600; }
+@media (max-width: 1100px) { .qingchang-shell .title-editor-layout { grid-template-columns: 1fr; } .title-preview-panel { position: static; } }

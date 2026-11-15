@@ -1,0 +1,6 @@
+(function(root,factory){const value=factory();if(typeof module==='object'&&module.exports)module.exports=value;else root.QingchangMonitorFields=value;})(typeof globalThis!=='undefined'?globalThis:this,function(){
+ const fields=[['fps','游戏 FPS','game'],['low1','1% Low','game'],['frameMs','帧时间','game'],['nativeFps','原生帧 FPS','game'],['generatedFps','生成帧 FPS','game'],['cpuTemp','CPU 温度','hardware'],['cpuClock','CPU 实时频率','hardware'],['cpu','CPU 占用','hardware'],['memory','内存占用','hardware'],['gpu','GPU 占用','hardware'],['gpuTemp','GPU 温度','hardware'],['gpuClock','GPU 频率','hardware'],['vram','显存占用','hardware'],['streamFps','推流 FPS','live'],['bitrate','直播码率','live'],['obsRender','OBS 渲染跳帧','live'],['obsEncode','OBS 编码跳帧','live'],['obsNetwork','OBS 网络丢帧','live']].map(([key,label,group])=>({key,label,group}));
+ const defaults=['cpuTemp','cpu','gpuTemp','gpu','memory','fps'];
+ function normalize(value){if(value===undefined)return [...defaults];if(!Array.isArray(value))throw new Error('请选择要显示的指标');const known=new Set(fields.map(x=>x.key)),selected=[...new Set(value)].filter(key=>known.has(key));if(!selected.length)throw new Error('请至少选择一个显示指标');return selected;}
+ return {fields,defaults,normalize};
+});
