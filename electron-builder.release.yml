@@ -47,6 +47,14 @@ asarUnpack:
   - node_modules/sherpa-onnx-node/**
   - node_modules/sherpa-onnx-win-x64/**
 extraResources:
+  - from: licenses
+    to: licenses
+  - from: THIRD_PARTY_NOTICES.md
+    to: THIRD_PARTY_NOTICES.md
+  - from: media
+    to: licenses/fonts
+    filter:
+      - "*.txt"
   - from: vendor/presentmon
     to: presentmon
   - from: vendor/hardware-monitor
